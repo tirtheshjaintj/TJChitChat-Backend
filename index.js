@@ -26,10 +26,10 @@ app.use("/api/chat", protect, chatRoute);
 app.use('/api/user', authRoute);
 app.use('/api/message', messageRoute);
 const __dirname1=path.resolve();
-app.use(express.static(path.join(__dirname1,'/frontend/dist')));
-app.get("*",(req,res)=>{
-  res.sendFile(path.resolve(__dirname1,"frontend","dist","index.html"));
-});
+// app.use(express.static(path.join(__dirname1,'/frontend/dist')));
+// app.get("*",(req,res)=>{
+//   res.sendFile(path.resolve(__dirname1,"frontend","dist","index.html"));
+// });
 
 io.on('connection', (socket) => {
   console.log('A user connected');
